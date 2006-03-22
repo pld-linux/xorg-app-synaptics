@@ -2,7 +2,7 @@ Summary:	Utilities for Synaptics touchpad
 Summary(pl):	Narzêdzia do touchpada Synaptics
 Name:		xorg-app-synaptics
 Version:	0.14.4
-Release:	0.1
+Release:	1
 Epoch:		0
 License:	GPL
 Group:		X11/Applications
@@ -47,10 +47,11 @@ Sterownik wej¶ciowy XFree86 do touchpada Synaptics.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1,%{_libdir}/modules/input}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man{1,5},%{_libdir}/modules/input}
 
 install synclient syndaemon $RPM_BUILD_ROOT%{_bindir}
 install manpages/*.1 $RPM_BUILD_ROOT%{_mandir}/man1
+install manpages/*.5 $RPM_BUILD_ROOT%{_mandir}/man5
 install synaptics_drv.o $RPM_BUILD_ROOT%{_libdir}/modules/input
 
 %clean
@@ -67,3 +68,4 @@ rm -rf $RPM_BUILD_ROOT
 %lang(de) %doc INSTALL.DE
 %lang(fr) %doc INSTALL.FR
 %attr(755,root,root) %{_libdir}/modules/input/*.o
+%{_mandir}/man5/*
