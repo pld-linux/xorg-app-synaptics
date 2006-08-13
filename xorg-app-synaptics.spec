@@ -1,13 +1,13 @@
 Summary:	Utilities for Synaptics touchpad
 Summary(pl):	Narzêdzia do touchpada Synaptics
 Name:		xorg-app-synaptics
-Version:	0.14.4
+Version:	0.14.6
 Release:	1
 Epoch:		0
 License:	GPL
 Group:		X11/Applications
 Source0:	http://w1.894.telia.com/~u89404340/touchpad/files/synaptics-%{version}.tar.bz2
-# Source0-md5:	ae9aef7a146346fbfc7edfdd63cdd273
+# Source0-md5:	1102cd575045640a064ab6f9b1e391af
 URL:		http://w1.894.telia.com/~u89404340/touchpad/
 BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xorg-lib-libXext-devel
@@ -52,7 +52,7 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man{1,5},%{_libdir}/xorg/module
 install synclient syndaemon $RPM_BUILD_ROOT%{_bindir}
 install manpages/*.1 $RPM_BUILD_ROOT%{_mandir}/man1
 install manpages/*.5 $RPM_BUILD_ROOT%{_mandir}/man5
-install synaptics_drv.o $RPM_BUILD_ROOT%{_libdir}/xorg/modules/input
+install synaptics_drv.so $RPM_BUILD_ROOT%{_libdir}/xorg/modules/input
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -67,5 +67,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc COMPATIBILITY INSTALL NEWS README* TODO
 %lang(de) %doc INSTALL.DE
 %lang(fr) %doc INSTALL.FR
-%attr(755,root,root) %{_libdir}/xorg/modules/input/*.o
+%attr(755,root,root) %{_libdir}/xorg/modules/input/*.so
 %{_mandir}/man5/*
