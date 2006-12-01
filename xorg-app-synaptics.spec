@@ -2,7 +2,7 @@ Summary:	Utilities for Synaptics touchpad
 Summary(pl):	Narzêdzia do touchpada Synaptics
 Name:		xorg-app-synaptics
 Version:	0.14.6
-Release:	1
+Release:	2
 Epoch:		0
 License:	GPL
 Group:		X11/Applications
@@ -11,6 +11,7 @@ Source0:	http://w1.894.telia.com/~u89404340/touchpad/files/synaptics-%{version}.
 URL:		http://w1.894.telia.com/~u89404340/touchpad/
 BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xorg-lib-libXext-devel
+BuildRequires:	xorg-xserver-server-devel
 BuildRequires:	perl-base
 Obsoletes:	X11-synaptics
 Requires:	xorg-driver-input-synaptics = %{epoch}:%{version}-%{release}
