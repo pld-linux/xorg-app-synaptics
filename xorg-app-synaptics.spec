@@ -1,5 +1,5 @@
 Summary:	Utilities for Synaptics touchpad
-Summary(pl):	Narzêdzia do touchpada Synaptics
+Summary(pl.UTF-8):   NarzÄ™dzia do touchpada Synaptics
 Name:		xorg-app-synaptics
 Version:	0.14.6
 Release:	3
@@ -21,12 +21,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Utilities for Synaptics touchpad.
 
-%description -l pl
-Narzêdzia do touchpada Synaptics.
+%description -l pl.UTF-8
+NarzÄ™dzia do touchpada Synaptics.
 
 %package -n xorg-driver-input-synaptics
 Summary:	XOrg/XFree86 input driver for Synaptics and ALPS touchpads
-Summary(pl):	Sterownik wej¶ciowy XOrg/XFree86 do touchpadów Synaptics oraz ALPS
+Summary(pl.UTF-8):   Sterownik wejÅ›ciowy XOrg/XFree86 do touchpadÃ³w Synaptics oraz ALPS
 Group:		X11/Libraries
 Obsoletes:	XFree86-input-synaptics
 Obsoletes:	X11-input-synaptics
@@ -34,8 +34,8 @@ Obsoletes:	X11-input-synaptics
 %description -n xorg-driver-input-synaptics
 XFree86 input driver for Synaptics touchpad.
 
-%description -n xorg-driver-input-synaptics -l pl
-Sterownik wej¶ciowy XFree86 do touchpada Synaptics.
+%description -n xorg-driver-input-synaptics -l pl.UTF-8
+Sterownik wejÅ›ciowy XFree86 do touchpada Synaptics.
 
 %prep
 %setup -q -n synaptics-%{version}
