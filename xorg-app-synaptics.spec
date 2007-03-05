@@ -8,6 +8,7 @@ License:	GPL
 Group:		X11/Applications
 Source0:	http://w1.894.telia.com/~u89404340/touchpad/files/synaptics-%{version}.tar.bz2
 # Source0-md5:	1102cd575045640a064ab6f9b1e391af
+Patch0:		%{name}-xorg72.patch
 URL:		http://w1.894.telia.com/~u89404340/touchpad/
 BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xorg-lib-libXext-devel
@@ -39,6 +40,7 @@ Sterownik wejściowy XFree86 do touchpada Synaptics.
 
 %prep
 %setup -q -n synaptics-%{version}
+%patch0 -p1
 
 %build
 %{__make} clean all \
