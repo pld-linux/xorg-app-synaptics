@@ -2,7 +2,7 @@ Summary:	Utilities for Synaptics touchpad
 Summary(pl.UTF-8):	Narzędzia do touchpada Synaptics
 Name:		xorg-app-synaptics
 Version:	0.14.6
-Release:	4
+Release:	5
 Epoch:		0
 License:	GPL
 Group:		X11/Applications
@@ -14,6 +14,7 @@ BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	xorg-xserver-server-devel
 BuildRequires:	perl-base
+BuildRequires:  rpmbuild(macros) >= 1.389
 Obsoletes:	X11-synaptics
 Requires:	xorg-driver-input-synaptics = %{epoch}:%{version}-%{release}
 ExcludeArch:	sparc sparc64
@@ -29,6 +30,7 @@ Narzędzia do touchpada Synaptics.
 Summary:	XOrg/XFree86 input driver for Synaptics and ALPS touchpads
 Summary(pl.UTF-8):	Sterownik wejściowy XOrg/XFree86 do touchpadów Synaptics oraz ALPS
 Group:		X11/Libraries
+%requires_xorg_xserver_xinput
 Obsoletes:	XFree86-input-synaptics
 Obsoletes:	X11-input-synaptics
 Obsoletes:	X11-synaptics
