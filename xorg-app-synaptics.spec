@@ -2,13 +2,13 @@ Summary:	Utilities for Synaptics touchpad
 Summary(pl.UTF-8):	Narzędzia do touchpada Synaptics
 Name:		xorg-app-synaptics
 Version:	0.14.6
-Release:	5
+Release:	6
 Epoch:		0
 License:	GPL
 Group:		X11/Applications
 Source0:	http://w1.894.telia.com/~u89404340/touchpad/files/synaptics-%{version}.tar.bz2
 # Source0-md5:	1102cd575045640a064ab6f9b1e391af
-Patch0:		%{name}-xorg72.patch
+Patch0:		%{name}-input-api.patch
 URL:		http://w1.894.telia.com/~u89404340/touchpad/
 BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xorg-lib-libXext-devel
