@@ -14,6 +14,7 @@ BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	xorg-xserver-server-devel
 BuildRequires:	perl-base
+BuildRequires:	pkgconfig
 BuildRequires:  rpmbuild(macros) >= 1.389
 Obsoletes:	X11-synaptics
 Requires:	xorg-driver-input-synaptics = %{epoch}:%{version}-%{release}
