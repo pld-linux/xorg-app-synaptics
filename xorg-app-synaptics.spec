@@ -2,13 +2,15 @@ Summary:	Utilities for Synaptics touchpad
 Summary(pl.UTF-8):	Narzędzia do touchpada Synaptics
 Name:		xorg-app-synaptics
 Version:	0.14.6
-Release:	7
+Release:	8
 Epoch:		0
 License:	GPL
 Group:		X11/Applications
 Source0:	http://w1.894.telia.com/~u89404340/touchpad/files/synaptics-%{version}.tar.bz2
 # Source0-md5:	1102cd575045640a064ab6f9b1e391af
+Source1:	files/11-x11-synaptics.fdi
 Patch0:		%{name}-git.patch
+Patch1:		synaptics-fix-xinerama.patch
 URL:		http://w1.894.telia.com/~u89404340/touchpad/
 BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xorg-lib-libXext-devel
@@ -45,6 +47,7 @@ Sterownik wejściowy XFree86 do touchpada Synaptics.
 %prep
 %setup -q -n synaptics-%{version}
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__make} clean all \
@@ -55,11 +58,14 @@ Sterownik wejściowy XFree86 do touchpada Synaptics.
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man{1,5},%{_libdir}/xorg/modules/input}
+install -d $RPM_BUILD_ROOT%{_datadir}/hal/fdi/policy/10osvendor
 
 install synclient syndaemon $RPM_BUILD_ROOT%{_bindir}
 install manpages/*.1 $RPM_BUILD_ROOT%{_mandir}/man1
 install manpages/*.5 $RPM_BUILD_ROOT%{_mandir}/man5
 install synaptics_drv.so $RPM_BUILD_ROOT%{_libdir}/xorg/modules/input
+
+install %{SOURCE1} $RPM_BUILD_ROOT%{_datadir}/hal/fdi/policy/10osvendor
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -75,4 +81,5 @@ rm -rf $RPM_BUILD_ROOT
 %lang(de) %doc INSTALL.DE
 %lang(fr) %doc INSTALL.FR
 %attr(755,root,root) %{_libdir}/xorg/modules/input/*.so
+%{_datadir}/hal/fdi/policy/10osvendor/*.fdi
 %{_mandir}/man5/*
