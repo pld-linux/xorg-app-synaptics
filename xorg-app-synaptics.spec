@@ -8,7 +8,7 @@ License:	GPL
 Group:		X11/Applications
 Source0:	http://w1.894.telia.com/~u89404340/touchpad/files/synaptics-%{version}.tar.bz2
 # Source0-md5:	1102cd575045640a064ab6f9b1e391af
-Source1:	files/11-x11-synaptics.fdi
+Source1:	11-x11-synaptics.fdi
 Patch0:		%{name}-git.patch
 Patch1:		synaptics-fix-xinerama.patch
 URL:		http://w1.894.telia.com/~u89404340/touchpad/
