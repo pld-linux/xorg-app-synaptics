@@ -2,7 +2,7 @@ Summary:	Utilities for Synaptics touchpad
 Summary(pl.UTF-8):	Narzędzia do touchpada Synaptics
 Name:		xorg-app-synaptics
 Version:	0.14.6
-Release:	8
+Release:	9
 Epoch:		0
 License:	GPL
 Group:		X11/Applications
