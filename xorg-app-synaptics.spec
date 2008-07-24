@@ -2,7 +2,7 @@ Summary:	Utilities for Synaptics touchpad
 Summary(pl.UTF-8):	Narzędzia do touchpada Synaptics
 Name:		xorg-app-synaptics
 Version:	0.14.6
-Release:	10
+Release:	11
 Epoch:		0
 License:	GPL
 Group:		X11/Applications
@@ -11,6 +11,7 @@ Source0:	http://w1.894.telia.com/~u89404340/touchpad/files/synaptics-%{version}.
 Source1:	11-x11-synaptics.fdi
 Patch0:		%{name}-git.patch
 Patch1:		synaptics-fix-xinerama.patch
+Patch2:		%{name}-errno.patch
 URL:		http://w1.894.telia.com/~u89404340/touchpad/
 BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xorg-lib-libXext-devel
@@ -48,6 +49,7 @@ Sterownik wejściowy XFree86 do touchpada Synaptics.
 %setup -q -n synaptics-%{version}
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 %{__make} clean all \
