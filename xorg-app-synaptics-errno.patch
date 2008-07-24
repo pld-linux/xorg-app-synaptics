@@ -1,0 +1,12 @@
+diff -urN synaptics-0.14.6.org/synaptics.c synaptics-0.14.6/synaptics.c
+--- synaptics-0.14.6.org/synaptics.c	2006-07-15 17:54:29.000000000 +0200
++++ synaptics-0.14.6/synaptics.c	2008-07-24 08:23:18.525331036 +0200
+@@ -438,7 +438,7 @@
+     if (repeater) {
+ 	/* create repeater fifo */
+ 	if ((xf86mknod(repeater, 666, XF86_S_IFIFO) != 0) &&
+-	    (xf86errno != xf86_EEXIST)) {
++	    (errno != xf86_EEXIST)) {
+ 	    xf86Msg(X_ERROR, "%s can't create repeater fifo\n", local->name);
+ 	} else {
+ 	    /* open the repeater fifo */
